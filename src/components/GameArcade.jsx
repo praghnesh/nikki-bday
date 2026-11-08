@@ -243,8 +243,8 @@ export default function GameArcade({ unlockAchievement, onNavigate }) {
     }
   };
 
-  const currentLevelData = ARCADE_LEVELS[currentLevelIndex];
-  const ActiveGameComponent = currentLevelData.Component;
+  const currentLevelData = ARCADE_LEVELS[currentLevelIndex] || ARCADE_LEVELS[0];
+  const ActiveGameComponent = currentLevelData?.Component || CatchHearts;
 
   return (
     <section className="relative min-h-[calc(100vh-4rem)] px-4 py-8 max-w-6xl mx-auto">

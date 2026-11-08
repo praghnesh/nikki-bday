@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Play, RotateCcw, Heart, Trophy, Timer, Award, ArrowRight } from "lucide-react";
+import { Play, RotateCcw, Heart, Trophy, Timer, Award, ArrowLeft, ArrowRight } from "lucide-react";
 import { sound } from "../utils/audioSynth";
 import { triggerConfetti, triggerGrandFireworks } from "../utils/confetti";
 

@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import FloatingParticles from "./components/FloatingParticles";
 import AchievementsModal from "./components/AchievementsModal";
 import ToastNotification from "./components/ToastNotification";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 // Main Sections
 import IntroScreen from "./components/IntroScreen";
@@ -106,59 +107,61 @@ export default function App() {
       />
 
       {/* Main Content Area */}
-      <main className="pt-16 pb-12 relative z-10">
-        {activeSection === "intro" && (
-          <IntroScreen
-            onEnterUniverse={handleEnterUniverse}
-            unlockAchievement={unlockAchievement}
-          />
-        )}
-        {activeSection === "gift" && (
-          <GiftBox
-            onNavigate={navigateToSection}
-            unlockAchievement={unlockAchievement}
-          />
-        )}
-        {activeSection === "arcade" && (
-          <GameArcade
-            onNavigate={navigateToSection}
-            unlockAchievement={unlockAchievement}
-          />
-        )}
-        {activeSection === "memories" && (
-          <MemoryGallery onNavigate={navigateToSection} />
-        )}
-        {activeSection === "special" && (
-          <SpecialPersonality
-            onNavigate={navigateToSection}
-            unlockAchievement={unlockAchievement}
-          />
-        )}
-        {activeSection === "letter" && (
-          <SecretLetter
-            onNavigate={navigateToSection}
-            unlockAchievement={unlockAchievement}
-          />
-        )}
-        {activeSection === "cake" && (
-          <BirthdayCake
-            onNavigate={navigateToSection}
-            unlockAchievement={unlockAchievement}
-          />
-        )}
-        {activeSection === "treasure" && (
-          <TreasureHunt
-            onNavigate={navigateToSection}
-            unlockAchievement={unlockAchievement}
-          />
-        )}
-        {activeSection === "finale" && (
-          <FinalSurprise
-            onReplay={handleReplay}
-            unlockAchievement={unlockAchievement}
-          />
-        )}
-      </main>
+      <ErrorBoundary>
+        <main className="pt-16 pb-12 relative z-10">
+          {activeSection === "intro" && (
+            <IntroScreen
+              onEnterUniverse={handleEnterUniverse}
+              unlockAchievement={unlockAchievement}
+            />
+          )}
+          {activeSection === "gift" && (
+            <GiftBox
+              onNavigate={navigateToSection}
+              unlockAchievement={unlockAchievement}
+            />
+          )}
+          {activeSection === "arcade" && (
+            <GameArcade
+              onNavigate={navigateToSection}
+              unlockAchievement={unlockAchievement}
+            />
+          )}
+          {activeSection === "memories" && (
+            <MemoryGallery onNavigate={navigateToSection} />
+          )}
+          {activeSection === "special" && (
+            <SpecialPersonality
+              onNavigate={navigateToSection}
+              unlockAchievement={unlockAchievement}
+            />
+          )}
+          {activeSection === "letter" && (
+            <SecretLetter
+              onNavigate={navigateToSection}
+              unlockAchievement={unlockAchievement}
+            />
+          )}
+          {activeSection === "cake" && (
+            <BirthdayCake
+              onNavigate={navigateToSection}
+              unlockAchievement={unlockAchievement}
+            />
+          )}
+          {activeSection === "treasure" && (
+            <TreasureHunt
+              onNavigate={navigateToSection}
+              unlockAchievement={unlockAchievement}
+            />
+          )}
+          {activeSection === "finale" && (
+            <FinalSurprise
+              onReplay={handleReplay}
+              unlockAchievement={unlockAchievement}
+            />
+          )}
+        </main>
+      </ErrorBoundary>
 
       {/* Achievements Modal */}
       <AchievementsModal
